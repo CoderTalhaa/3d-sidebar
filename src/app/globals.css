@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+.heading::before {
+  content: "↳";
+  position: absolute;
+  font-size: max(16px, 0.8333333333vw);
+  font-family: monospace;
+
+  letter-spacing: 0.005em;
+  line-height: max(18px, 0.9375vw);
+  left: 0;
+}
+
+.linkButton {
+  font-family: monospace;
+  width: fit-content;
+  font-size: max(14px, 0.7291666667vw);
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 0.4em;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  padding: 0.3em;
+  margin-bottom: 10px;
+  transition-property: color, border;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  border: 1px solid #ff4d00;
+  color: #ff4d00;
+}
+
+.link {
+  width: fit-content;
+  position: relative;
+  font-family: monospace;
+
+  overflow: hidden;
+  font-size: max(14px, 0.7291666667vw);
+  transition: color 0.15s ease-in-out;
+}
+
+.link:hover {
+  color: #ff4d00;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+  transition-property: width, border;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+}
+
+.link:hover:after {
+  width: 600%;
+  border-bottom: 1px dashed #ff4d00;
+  animation: linkdash 10s linear infinite;
+}
+
+@keyframes linkdash {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(6em);
+  }
+}
+
+
+.border-animated {
+  border: 4px dotted transparent;
+  position: relative;
+  padding: 1rem;
+  background: linear-gradient(to right, red 50%, transparent 0) 0 0/10px 100%;
+  animation: move-dots 2s linear infinite;
+}
+
+
+@keyframes move-dots {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.border-animated {
+  border: 4px dotted transparent;
+  position: relative;
+  padding: 1rem;
+  background: linear-gradient(to right, red 50%, transparent 0) 0 0/10px 100%;
+  animation: move-dots 2s linear infinite;
+}
